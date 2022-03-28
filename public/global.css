@@ -1,0 +1,25 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  background: white;
+  color: black;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.5rem;
+}
