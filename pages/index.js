@@ -5,6 +5,18 @@ import IMEInput from "../components/IMEInput"
 import conjugate from "../components/conjugate";
 import { dictionary, forms, formNames, formMeanings } from "../components/data";
 
+// shim
+String.prototype.replaceAll = function replaceAll(a, b) {
+  let s = this;
+  let last;
+  do {
+    last = s;
+    s = s.replace(a, b);    
+  } while (last !== s);
+
+  return s;
+}
+
 const randint = (low, high) => (
   low + Math.floor(Math.random() * (high - low))
 )
@@ -36,7 +48,6 @@ export default () => {
   }, []);
 
   let meaning = formMeanings[form].replaceAll("%inf%", verb.english.inf).replaceAll("%imp%", verb.english.imp);
-  console.log(form.slice(form.length - 4));
 
   return <>
     <CommonHead>
